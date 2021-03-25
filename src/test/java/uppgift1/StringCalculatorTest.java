@@ -39,5 +39,10 @@ public class StringCalculatorTest {
         String numbers6 = "1,-5,7,-3";
         Assertions.assertThrows(RuntimeException.class,() -> testObject.add(numbers6));
 
+        String numbers7 = "432,6,10005";
+        int expected7 = 438;
+        actual = testObject.add(numbers7);
+        Assertions.assertEquals(expected7,actual);
+
     }
 }

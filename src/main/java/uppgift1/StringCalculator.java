@@ -16,10 +16,10 @@ public class StringCalculator {
         }
         splitNumbers = numbers.split(delimiter,0);
         for (String num : splitNumbers) {
-            if(num.startsWith("-")){
+            if (num.startsWith("-")) {
                 negative.add(num);
-            }else if (!num.equals("")) {
-                sum += Integer.parseInt(num);
+            } else if (!num.equals("")) {
+                sum += (Integer.parseInt(num) < 1001) ? Integer.parseInt(num) : 0;
             }
         }
         if(!negative.isEmpty()){
