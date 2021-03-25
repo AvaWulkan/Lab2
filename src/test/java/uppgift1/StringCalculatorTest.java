@@ -25,9 +25,14 @@ public class StringCalculatorTest {
         actual = StringCalculator.add(numbers3);
         Assertions.assertEquals(expected3,actual);
 
-        String numbers4 = "1,2,6,7\n2";
-        int expected4 = 18;
+        String numbers4 = "1,23,6,7\n2";
+        int expected4 = 39;
         actual = StringCalculator.add(numbers4);
         Assertions.assertEquals(expected4,actual);
+
+        String numbers5 = "//-\n432-6-6-67";
+        int expected5 = 511;
+        actual = StringCalculator.add(numbers5);
+        Assertions.assertEquals(expected5,actual);
     }
 }
