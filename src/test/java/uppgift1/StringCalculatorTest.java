@@ -48,5 +48,10 @@ public class StringCalculatorTest {
         int expected8 = 6;
         actual = testObject.add(numbers8);
         Assertions.assertEquals(expected8,actual);
+
+        String numbers9 = "//[*][%]\n1*2%3";
+        int expected9 = 6;
+        actual = testObject.add(numbers9);
+        Assertions.assertEquals(expected9,actual);
     }
 }

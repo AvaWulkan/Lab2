@@ -11,8 +11,16 @@ public class StringCalculator {
 
         if(numbers.startsWith("//")){
             String[] tempString = numbers.split("\n", 2);
-            delimiter = tempString[0].substring(2);
             numbers = tempString[1];
+            String[] temp = tempString[0].substring(2).split("\\[|\\]");
+            delimiter = "";
+            for (String t : temp) {
+                if(t.startsWith("*")||t.startsWith("."))
+                    t = "[" + t + "]";
+                if(!t.equals(""))
+                    delimiter += t + "|";
+            }
+            delimiter = delimiter.substring(0,delimiter.length()-1);
         }
         splitNumbers = numbers.split(delimiter,0);
         for (String num : splitNumbers) {
