@@ -54,7 +54,7 @@ public class StringCalculatorTest {
         actual = testObject.add(numbers9);
         Assertions.assertEquals(expected9,actual);
 
-        String numbers10 = "//[*][%][--]\n3--1*2%3";
+        String numbers10 = "//[**][%][--]\n3--1**2%3";
         int expected10 = 9;
         actual = testObject.add(numbers10);
         Assertions.assertEquals(expected10,actual);
