@@ -44,5 +44,9 @@ public class StringCalculatorTest {
         actual = testObject.add(numbers7);
         Assertions.assertEquals(expected7,actual);
 
+        String numbers8 = "//[***]\n1***2***3";
+        int expected8 = 6;
+        actual = testObject.add(numbers8);
+        Assertions.assertEquals(expected8,actual);
     }
 }
