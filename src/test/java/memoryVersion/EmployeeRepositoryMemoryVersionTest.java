@@ -62,9 +62,9 @@ public class EmployeeRepositoryMemoryVersionTest {
 
     @Test
     void InitialiseWithListTest(){
-        ArrayList calling = new ArrayList();
-        calling.add(new Employee(ID,SALARY));
-        EmployeeRepositoryMemoryVersion testObject = new EmployeeRepositoryMemoryVersion(calling);
+        ArrayList initalizingLIst = new ArrayList();
+        initalizingLIst.add(new Employee(ID,SALARY));
+        EmployeeRepositoryMemoryVersion testObject = new EmployeeRepositoryMemoryVersion(initalizingLIst);
 
         ArrayList<Employee> expected = new ArrayList<>();
         expected.add(new Employee(ID, SALARY));
