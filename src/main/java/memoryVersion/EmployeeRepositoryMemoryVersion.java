@@ -17,6 +17,12 @@ public class EmployeeRepositoryMemoryVersion implements EmployeeRepository {
 
     @Override
     public Employee save(Employee e) {
+        for (Employee employee:allEmployees) {
+            if(e.getId().equals(employee.getId())){
+                int index = allEmployees.indexOf(employee);
+                allEmployees.get(index).setSalary(e.getSalary());
+            }
+        }
         allEmployees.add(e);
         return allEmployees.get(allEmployees.size()-1);
     }

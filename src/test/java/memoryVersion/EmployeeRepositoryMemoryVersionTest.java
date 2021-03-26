@@ -9,6 +9,7 @@ import java.util.ArrayList;
 public class EmployeeRepositoryMemoryVersionTest {
     String ID = "001";
     int SALARY = 23000;
+    int SALARY_2 = 30000;
 
     @Test
     void findAllEmptyTest(){
@@ -42,5 +43,17 @@ public class EmployeeRepositoryMemoryVersionTest {
         ArrayList actual = new ArrayList(testObject.findAll());
 
         Assertions.assertEquals(expected.toString(), actual.toString());
+    }
+
+    @Test
+    void SaveSameIdTest(){
+        EmployeeRepositoryMemoryVersion testObject = new EmployeeRepositoryMemoryVersion();
+
+        Employee expected = new Employee(ID, SALARY_2);
+        testObject.save(new Employee(ID, SALARY));
+        Employee actual = testObject.save(new Employee(ID, SALARY_2 ));
+
+
+        Assertions.assertEquals(expected.toString(),actual.toString());
     }
 }
