@@ -49,11 +49,28 @@ public class EmployeeRepositoryMemoryVersionTest {
     void SaveSameIdTest(){
         EmployeeRepositoryMemoryVersion testObject = new EmployeeRepositoryMemoryVersion();
 
-        Employee expected = new Employee(ID, SALARY_2);
-        testObject.save(new Employee(ID, SALARY));
-        Employee actual = testObject.save(new Employee(ID, SALARY_2 ));
+        Employee expected = new Employee(ID, SALARY);
+        Employee actual = testObject.save(new Employee(ID, SALARY));
 
+        Assertions.assertEquals(expected.toString(),actual.toString());
+
+        expected = new Employee(ID, SALARY_2);
+        actual = testObject.save(new Employee(ID, SALARY_2));
 
         Assertions.assertEquals(expected.toString(),actual.toString());
     }
+
+    @Test
+    void InitialiseWithListTest(){
+        ArrayList calling = new ArrayList();
+        calling.add(new Employee(ID,SALARY));
+        EmployeeRepositoryMemoryVersion testObject = new EmployeeRepositoryMemoryVersion(calling);
+
+        ArrayList<Employee> expected = new ArrayList<>();
+        expected.add(new Employee(ID, SALARY));
+        ArrayList<Employee> actual = new ArrayList<>(testObject.findAll());
+
+        Assertions.assertEquals(expected.toString(),actual.toString());
+    }
+
 }

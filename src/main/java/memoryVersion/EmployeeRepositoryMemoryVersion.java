@@ -10,6 +10,12 @@ public class EmployeeRepositoryMemoryVersion implements EmployeeRepository {
 
     private ArrayList<Employee> allEmployees = new ArrayList<>();
 
+    public EmployeeRepositoryMemoryVersion(){}
+
+    public EmployeeRepositoryMemoryVersion(List<Employee> e){
+        allEmployees.addAll(e);
+    }
+
     @Override
     public List<Employee> findAll() {
         return allEmployees;
